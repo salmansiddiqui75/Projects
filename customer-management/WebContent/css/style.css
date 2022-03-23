@@ -1,0 +1,34 @@
+.la{
+	font-size:20px;
+}
+.dv{
+	text-align:center;
+	margin-top:60px;
+}
+span{
+	font-size:20px;
+	color:red;
+}
+.bt{
+	align:right;
+}
+.ta{
+	margin-top:10px;
+	margin-left:auto;
+	margin-right:auto;
+	border:2px solid black;
+	border-radius:5px;
+	width:40%;
+}
+.tb{
+	width:90%;
+	font-size:20px;
+	border-radius:5px;
+}
+.pd{
+	padding:10px;
+}
+.p {
+  color: red;
+  text-align: center;
+}

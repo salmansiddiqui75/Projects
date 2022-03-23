@@ -1,0 +1,44 @@
+<%@ include file="navbar.jsp"%>
+<%@ include file="conn.jsp"%>
+<%
+String query="select * from customer where cid=?";
+PreparedStatement ps=cn.prepareStatement(query);
+String v1=request.getParameter("cid");
+ps.setString(1,v1);
+ResultSet rst=ps.executeQuery();
+rst.next();
+%>
+<form action="delete-record2.jsp">
+<table class='ta' >
+<tr style="background-color:skyblue">
+<td colspan="2" align="center" ><label style="font-size:20px;color:white">Confirm customer details</label></td>
+</tr>
+<tr>
+<th class="pd">Customer ID</th>
+<td class="pd"><input type="text" class="tb" name='cid' readonly="readonly" value=<%=rst.getString(1) %>></td>
+</tr>
+<tr>
+<th class="pd">Edit Firstname</th>
+<td class="pd"><input type="text" class="tb" name='firstname' readonly="readonly" value=<%=rst.getString(2) %>></td>
+</tr>
+<tr>
+<th class="pd">Edit Lastname</th>
+<td class="pd"><input type="text" class="tb" name='lastname' readonly="readonly" value=<%=rst.getString(3) %>></td>
+</tr>
+<tr>
+<th class="pd">Edit Address</th>
+<td class="pd"><input type="text" class="tb" name='address' readonly="readonly" value=<%=rst.getString(4) %>></td>
+</tr>
+<tr>
+<th class="pd">Edit PhoneNo</th>
+<td class="pd"><input type="text" class="tb" name='phoneno' readonly="readonly" value=<%=rst.getString(5) %>></td>
+</tr>
+<tr>
+<th class="pd">Edit Email-Id</th>
+<td class="pd"><input type="text" class="tb" name='email' readonly="readonly" value=<%=rst.getString(6) %>></td>
+</tr>
+<tr><td colspan="2" align="center">
+<Button class="btn btn-primary" style="margin:10px"  onclick="return confirm('Are you sure you want to delete this item?');"> Delete Record</Button>
+</td></tr>
+</table>
+</form>
